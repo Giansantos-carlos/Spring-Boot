@@ -1,0 +1,22 @@
+server:
+  port: 8090
+  error:
+    include-stacktrace: NEVER
+logging:
+  level:
+    org.springframework.security: DEBUG
+spring:
+#  security:
+#    user:
+#      name: user
+#      password: devdojo
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/user_service?useTimezone=true&serverTimezone=UTC&createDatabaseIfNotExist=true
+    username: ${ROOT_USER:root}
+    password: ${ROOT_PASSWORD:example}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
